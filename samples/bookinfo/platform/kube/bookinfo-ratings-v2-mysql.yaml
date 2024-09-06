@@ -44,7 +44,7 @@ spec:
           - name: DB_TYPE
             value: "mysql"
           - name: MYSQL_DB_HOST
-            value: mysqldb
+            value: mysql-read
           - name: MYSQL_DB_PORT
             value: "3306"
           - name: MYSQL_DB_USER
