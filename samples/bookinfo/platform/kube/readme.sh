@@ -11,3 +11,7 @@ kubectl port-forward svc/productpage -n bookinfo 9080:9080
 kubectl logs -n bookinfo -c mysql mysql-0
 
 kubectl delete ns bookinfo
+
+# backup 
+kubectl apply -n bookinfo -f mysql-backup.yaml 
+kubectl delete -n bookinfo -f mysql-backup.yaml 
