@@ -14,4 +14,6 @@ kubectl delete ns bookinfo
 
 # backup 
 kubectl apply -n bookinfo -f mysql-backup.yaml 
+kubectl apply -n bookinfo -f mysql-restore.yaml 
+
 kubectl delete -n bookinfo -f mysql-backup.yaml 

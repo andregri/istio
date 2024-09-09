@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: restore-mysql
+spec:
+  template:
+    spec:
+      containers:
+      - name: mysql-restore
+        image: mysql:8.3.0
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-credentials
+              key: rootpasswd
+        command:
+        - /bin/sh
+        - -c
+        - ls -l /backup
+        volumeMounts:
+        - name: backup
+          mountPath: /backup
+      restartPolicy: Never
+      volumes:
+      - name: backup
+        persistentVolumeClaim:
+          claimName: backup-mysql-pvc

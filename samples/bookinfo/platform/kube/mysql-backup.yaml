@@ -12,7 +12,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: backup-mysql
+  name: mysql-backup
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -20,7 +20,7 @@ spec:
       template:
         spec:
           containers:
-          - name: backup-mysql
+          - name: mysql-backup
             image: mysql:8.3.0
             imagePullPolicy: IfNotPresent
             env:
