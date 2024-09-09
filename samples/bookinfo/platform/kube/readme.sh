@@ -17,3 +17,7 @@ kubectl apply -n bookinfo -f mysql-backup.yaml
 kubectl apply -n bookinfo -f mysql-restore.yaml 
 
 kubectl delete -n bookinfo -f mysql-backup.yaml 
+
+# resources
+https://www.loft.sh/blog/kubernetes-statefulset-examples-and-best-practices
+https://medium.com/@junxie2/kubernetes-statefulset-for-db-applications-7fd186c6ccb9
